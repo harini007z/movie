@@ -1,0 +1,380 @@
+﻿<!DOCTYPE html><html lang="XX"><head>
+
+<script type="text/javascript"><?php $judulnya = isset($_GET['q']) ? strip_tags(str_replace('-', ' ', ucwords($_GET['q']))) :  'Movie';?>
+<!DOCTYPE html>
+<html class="no-js en">
+<title>Watch <?php echo $judulnya;?> Online</title>
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1,user-scalable=1">
+<meta name=robots content="NOINDEX, NOFOLLOW" />
+<title></title>
+<link rel=stylesheet href="assets/css/main.css">
+<script src="assets/js/modernizr.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel=stylesheet>
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" href="assets/img/club-logo.png" />
+<link rel="icon" type="image/png" href="favicon.png">
+
+<body onload="randomNumber(); randomLikes();">
+
+    <!-- Content -->
+    <div class="header-wrapper">
+        <div class="video-header">
+            <div class="header-container">
+                <div class="header-logo">
+                    <img src="assets/img/movies-logo.png" alt="Putlocker Movies">
+                </div>
+                <div class="header-title">
+                    <a href="supportus.php" class="x-domain">
+                        <div class="your-search">Your Search:</div>
+                        <div class="title-keyword"><?php echo $judulnya;?></div>
+                    </a>
+                </div>
+
+                <div class="header-subtitle">1.26:12 MIN | 4K ULTRAHD | FULL HD (1080p) | SD</div>
+                <div class="header-related">
+                    <div id="random-number"></div> related files found for ""<?php echo $judulnya;?>""</div>
+            </div>
+
+            <div class="header-right"><img class="media-icon" data-interchange="[assets/img/facebook-icon.png, (mobile)], [assets/img/facebook-icon.png,, (desktop)]" alt="">
+                <div class="media-likes" id="media-likes-facebook">2</div><img class="media-icon" data-interchange="[assets/img/googleplus-icon.png, (mobile)], [assets/img/googleplus-icon.png,, (desktop)]" alt="">
+                <div class="media-likes" id="media-likes-googleplus">3</div><img class="media-icon" data-interchange="[assets/img/twitter-icon.png, (mobile)], [assets/img/twitter-icon.png,, (desktop)]" alt="">
+                <div class="media-likes" id="media-likes-twitter">5</div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-mod">
+        <div class="large-12 medium-10 small-no-mod columns medium-centered">
+
+            <div class="video-container">
+                <div class="video-player">
+                    <div class="video">
+                        <div class="overlay-video"></div>
+                        <div class="percent-container">
+                            <p><img class="loader" src="assets/img/video-throbber.gif" alt="">
+                            </p>
+                            <p class="percent"></p>
+                        </div>
+                        <div class="img-bg"><img class="video-img" src="assets/img/openingscenewide_EN.jpg" alt="Putlocker">
+                        </div>
+                        <div class="form-container">
+                            <form>
+                                <div class="row">
+                                    <div class="small-12 medium-10 medium-centered columns text-center">
+                                        <div class="small-12 columns text-center cone"><img class="popcorn-img" data-interchange="[assets/img/movie-popcorn-icon.png, (mobile)], [assets/img/movie-popcorn-icon.png,, (desktop)]" alt="">
+                                        </div>
+                                        <div class="small-12 columns">
+                                            <p><span class="video-popup-text">You must be logged in to stream ""<?php echo $judulnya;?>"". Please create a FREE account. </span>
+                                            </p> <a href="supportus.php" class="submit-button x-domain" style="border:none !important;">Create a Free Account Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <div class="small-1 medium-1 large-1 no-col-hd-pad columns"><i class="icon-play"></i><a href="supportus.php" class="x-domain"><i class="icon-pause"></i></a>
+                        </div>
+                        <div class="small-9 medium-8 large-5 columns">
+                            <div class="time">
+                                <div class="time-full buffer-play"></div>
+                                <div class="time-buffer buffer"></div>
+                            </div>
+                        </div>
+                        <div class="small-0 medium- 0 large-1 columns show-for-large-up"><span class="timer">1.26:12</span>
+                        </div>
+                        <div class="small-1 medium-1 columns hide-for-large-up"><i class="icon-vol"></i>
+                        </div>
+                        <div class="small-0 medium-0 large-3 columns no-col-left-pad show-for-large-up">
+                            <div class="small-0 medium-0 large-3 columns"><i class="icon-vol"></i>
+                            </div>
+                            <div class="small-0 medium-0 medium-9 columns">
+                                <input type="text" data-slider="true" value="0.4" data-slider-highlight="true">
+                            </div>
+                        </div>
+                        <div class="small-0 medium-1 large-1 columns no-col-hd-pad show-for-medium-up"><a href="supportus.php" class="x-domain"><i class="icon-hd"></i></a>
+                        </div>
+                        <div class="small-0 medium-1 large-1 columns no-col-left-pad show-for-medium-up"><a href="supportus.php" class="x-domain"><i class="icon-fullscreen"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="movie-data">
+                        <div class="available-formats-wrapper">
+                            <div class="available-formats">Available Formats</div>
+                            <div class="available-formats-img"><img data-interchange="[assets/img/available-formats-img.png, (mobile)], [assets/img/available-formats-img.png,, (desktop)]" alt=""> </div>
+                            <div class="available-formats-img-mobile"><img data-interchange="[assets/img/available-formats-img-mobile.png, (mobile)], [assets/img/available-formats-img-mobile.png,, (desktop)]" alt=""> </div>
+                            <a href="supportus.php" class="x-domain">
+                                <div class="download-button"><img data-interchange="[assets/img/download-cloud.png, (mobile)], [assets/img/download-cloud.png,, (desktop)]" alt="">
+                                    <div class="download-text">Continue
+                                        <br>
+                                        <div class="related-videos">
+                                            <div id="random-number3"></div>related videos</div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="secure-wrapper">
+                                <div class="secure">Secure Verified</div><img data-interchange="[assets/img/secure-icon.png, (mobile)], [assets/img/secure-icon.png,, (desktop)]" alt=""> </div>
+                        </div>
+
+                        <div class='small-12 medium-8 large-9 no-col-pad columns' style="width:99%;">
+                            <div class="members-title">Members Reviews</div>
+                            <div class="members-your-search">Your Search: </div>
+                            <div class="members-title-keyword"><?php echo $judulnya;?></div>
+                            <div class='clear'></div>
+                            <div class="members-related">
+                                <div id="random-number2"></div>related files found</div>
+                            <div class="members-stars"><img data-interchange="[assets/img/stars-icons.jpg, (mobile)], [assets/img/stars-icons.jpg,, (desktop)]" alt="">
+                            </div>
+                            <div class='clear'></div>
+                            <div class="members-subtitle">1.26:12 MIN | 4K ULTRAHD | FULL HD (1080p) | SD</div>
+                        </div>
+                        <div class='clear'></div>
+                        <div class="comment-box">
+                            <div class="comment-user-icon">
+                                <img data-interchange="[assets/img/user-icon.png, (mobile)], [assets/img/user-icon.png,, (desktop)]" alt="">
+                            </div>
+                            <div class="comment-username">JPEREZ650</div>
+                            <div class='clear'></div>
+                            <div class="comment-time-icon"><img data-interchange="[assets/img/clock-icon.png, (mobile)], [assets/img/clock-icon.png,, (desktop)]" alt="">
+                            </div>
+                            <div class="comment-days">3 hours ago</div>
+                            <div class='clear'></div>
+                            <div class="comment-msg">love this place! A+++</div>
+                        </div>
+                        <div class="comment-box">
+                            <div class="comment-user-icon"><img data-interchange="[assets/img/user-icon.png, (mobile)], [assets/img/user-icon.png,, (desktop)]" alt="">
+                            </div>
+                            <div class="comment-username">xKevMas</div>
+                            <div class='clear'></div>
+                            <div class="comment-time-icon"><img data-interchange="[assets/img/clock-icon.png, (mobile)], [assets/img/clock-icon.png,, (desktop)]" alt="">
+                            </div>
+                            <div class="comment-days">5 hours ago</div>
+                            <div class='clear'></div>
+                            <div class="comment-msg">Fastest service ive ever seen in my life and really great quality. I recommend using this site for everything!!!</div>
+                        </div>
+                        <div class="comment-box">
+                            <div class="comment-user-icon"><img data-interchange="[assets/img/user-icon.png, (mobile)], [assets/img/user-icon.png,, (desktop)]" alt="">
+                            </div>
+                            <div class="comment-username">miracoolix</div>
+                            <div class='clear'></div>
+                            <div class="comment-time-icon"><img data-interchange="[assets/img/clock-icon.png, (mobile)], [assets/img/clock-icon.png,, (desktop)]" alt="">
+                            </div>
+                            <div class="comment-days">2 days ago</div>
+                            <div class='clear'></div>
+                            <div class="comment-msg">Thank you very much - i was looking for this for a veeery long time!</div>
+                        </div>
+                        <div class="comment-box">
+                            <div class="comment-user-icon"><img data-interchange="[assets/img/user-icon.png, (mobile)], [assets/img/user-icon.png,, (desktop)]" alt="">
+                            </div>
+                            <div class="comment-username">MjrTom</div>
+                            <div class='clear'></div>
+                            <div class="comment-time-icon"><img data-interchange="[assets/img/clock-icon.png, (mobile)], [assets/img/clock-icon.png,, (desktop)]" alt="">
+                            </div>
+                            <div class="comment-days">2 days ago</div>
+                            <div class='clear'></div>
+                            <div class="comment-msg">Glad to have found you
+                                <3</div>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-user-icon"><img data-interchange="[assets/img/user-icon.png, (mobile)], [assets/img/user-icon.png,, (desktop)]" alt="">
+                                </div>
+                                <div class="comment-username">Movie Hunter</div>
+                                <div class='clear'></div>
+                                <div class="comment-time-icon"><img data-interchange="[assets/img/clock-icon.png, (mobile)], [assets/img/clock-icon.png,, (desktop)]" alt="">
+                                </div>
+                                <div class="comment-days">3 days ago</div>
+                                <div class='clear'></div>
+                                <div class="comment-msg">great stuff all around, fantastic quality</div>
+                                <div class="comment-box-reply">
+                                    <div class="comment-user-icon"><img data-interchange="[assets/img/user-icon.png, (mobile)], [assets/img/user-icon.png,, (desktop)]" alt="">
+                                    </div>
+                                    <div class="comment-username">Anne Marie D</div>
+                                    <div class='clear'></div>
+                                    <div class="comment-time-icon"><img data-interchange="[assets/img/clock-icon.png, (mobile)], [assets/img/clock-icon.png,, (desktop)]" alt="">
+                                    </div>
+                                    <div class="comment-days">3 days ago</div>
+                                    <div class='clear'></div>
+                                    <div class="comment-msg">I agree :)</div>
+                                </div>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-user-icon"><img data-interchange="[assets/img/user-icon.png, (mobile)], [assets/img/user-icon.png,, (desktop)]" alt="">
+                                </div>
+                                <div class="comment-username">majoryX</div>
+                                <div class='clear'></div>
+                                <div class="comment-time-icon"><img data-interchange="[assets/img/clock-icon.png, (mobile)], [assets/img/clock-icon.png,, (desktop)]" alt="">
+                                </div>
+                                <div class="comment-days">4 days ago</div>
+                                <div class='clear'></div>
+                                <div class="comment-msg">Wow!!!</div>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-user-icon"><img data-interchange="[assets/img/user-icon.png, (mobile)], [assets/img/user-icon.png,, (desktop)]" alt="">
+                                </div>
+                                <div class="comment-username">veereenaa</div>
+                                <div class='clear'></div>
+                                <div class="comment-time-icon"><img data-interchange="[assets/img/clock-icon.png, (mobile)], [assets/img/clock-icon.png,, (desktop)]" alt="">
+                                </div>
+                                <div class="comment-days">5 days ago</div>
+                                <div class='clear'></div>
+                                <div class="comment-msg">oh - even works on my telly</div>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-user-icon"><img data-interchange="[assets/img/user-icon.png, (mobile)], [assets/img/user-icon.png,, (desktop)]" alt="">
+                                </div>
+                                <div class="comment-username">DontAskMeThat</div>
+                                <div class='clear'></div>
+                                <div class="comment-time-icon"><img data-interchange="[assets/img/clock-icon.png, (mobile)], [assets/img/clock-icon.png,, (desktop)]" alt="">
+                                </div>
+                                <div class="comment-days">5 days ago</div>
+                                <div class='clear'></div>
+                                <div class="comment-msg">pleaazze also offer airplay!</div>
+                                <div class="comment-box-reply">
+                                    <div class="comment-user-icon"><img data-interchange="[assets/img/user-icon.png, (mobile)], [assets/img/user-icon.png,, (desktop)]" alt="">
+                                    </div>
+                                    <div class="comment-username">Olivierwifi</div>
+                                    <div class='clear'></div>
+                                    <div class="comment-time-icon"><img data-interchange="[assets/img/clock-icon.png, (mobile)], [assets/img/clock-icon.png,, (desktop)]" alt="">
+                                    </div>
+                                    <div class="comment-days">5 days ago</div>
+                                    <div class='clear'></div>
+                                    <div class="comment-msg">Yeah! Apple TV rules!</div>
+                                </div>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-user-icon"><img data-interchange="[assets/img/user-icon.png, (mobile)], [assets/img/user-icon.png,, (desktop)]" alt="">
+                                </div>
+                                <div class="comment-username">CindyCoops</div>
+                                <div class='clear'></div>
+                                <div class="comment-time-icon"><img data-interchange="[assets/img/clock-icon.png, (mobile)], [assets/img/clock-icon.png,, (desktop)]" alt="">
+                                </div>
+                                <div class="comment-days">6 days ago</div>
+                                <div class='clear'></div>
+                                <div class="comment-msg">these are some of the best movies i've ever seen!</div>
+                            </div>
+                        </div>
+                        <div></div>
+                        <div class="footer">
+                            <div class="footer-copyright"> *This filename has been transmitted via an external affiliate, we can therefore furnish no guarantee for the existence of this file on our servers. We match keywords, searched from 3rd-party sites, to affiliate-networks offering unlimited access to licensed entertainment content. We allows visitors, otherwise looking for free-content to enjoy more for less.
+                                <br>
+                                <br>&copy; 2005 - 2015</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="assets/js/jQuery.js"></script>
+        <script src=//ajax.googleapis.com/ajax/libs/webfont/1.4.2/webfont.js></script>
+        <script>
+            WebFont.load({
+                google: {
+                    families: ['Open Sans']
+                }
+            });
+            $(document).foundation();
+        </script>
+</body>
+</html>
+
+var params = "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes"
+
+function PopShow3() {
+
+CookieTest=navigator.cookieEnabled;
+
+if(CookieTest)
+
+{
+
+ClickUndercookie = GetCookie('clickunder');
+
+if (ClickUndercookie == null)
+
+{
+
+var ExpDate = new Date ();
+
+ExpDate.setTime(ExpDate.getTime() + (24 * 60 * 60 * 1000));
+
+SetCookie('clickunder','1',ExpDate, "/");
+
+window.open("https://anickeebsoon.com/4/7945067", "Yandex", params);
+
+window.focus();
+
+}
+
+}
+
+}
+
+function GetCookie (name) {
+
+var arg = name + "=";
+
+var alen = arg.length;
+
+var clen = document.cookie.length;
+
+var i = 0;
+
+while (i < clen) {
+
+var j = i + alen;
+
+if (document.cookie.substring(i, j) == arg)
+
+return getCookieVal (j);
+
+i = document.cookie.indexOf(" ", i) + 1;
+
+if (i == 0) break;
+
+}
+
+return null;
+
+}
+
+function SetCookie (name, value) {
+
+var argv = SetCookie.arguments;
+
+var argc = SetCookie.arguments.length;
+
+var expires = (argc > 2) ? argv[2] : null;
+
+var path = (argc > 3) ? argv[3] : null;
+
+var domain = (argc > 4) ? argv[4] : null;
+
+var secure = (argc > 5) ? argv[5] : false;
+
+document.cookie = name + "=" + escape (value) +
+
+((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
+
+((path == null) ? "" : ("; path=" + path)) +
+
+((domain == null) ? "" : ("; domain=" + domain)) +
+
+((secure == true) ? "; secure" : "");
+
+}
+
+document.onmouseup=PopShow3;
+
+</script>
+<meta name="monetag" content="c68a5a2d336773637a3c6bbd103bd94a">
+<meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0, user-scalable=no"><meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#fff"><meta name="msapplication-navbutton-color" content="#fff"><title>The most popular dating site of this month</title><style>@import url("https://fonts.googleapis.com/css?family=Montserrat&subset=latin-ext");.fadeInUp{animation:a .4s forwards}@keyframes a{0%{opacity:0;transform:translate3d(0,2rem,0)}to{opacity:1;transform:translateZ(0)}}body{font-family:Montserrat,Arial,Helvetica,sans-serif;font-size:16px;line-height:1.4}h1,h2,h3,h4,h5,h6{text-transform:uppercase}h1{font-size:2.4rem;line-height:1}h2{font-size:1.8rem}h2,h3{line-height:1.1}h3{font-size:1.6rem}h4{font-size:1.4rem}h4,h5{line-height:1.1}h5{font-size:1.3rem}h6{font-size:.9rem;line-height:1.1}p{font-size:1.25rem}*{margin:0;padding:0;box-sizing:border-box;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}html{font-size:62.5%}body,html{width:100%;height:100%}body{overflow-x:hidden;min-width:320px;min-height:480px;background:#fff;color:#000;z-index:0}body.minified{overflow:hidden}a{text-decoration:none}img{display:block;max-width:100%;height:auto}ul{list-style-type:disc;margin-left:2rem}ul li{font-size:1.175rem;margin-bottom:.5rem;text-align:left}.clearfix:after{content:"";display:block;clear:both}.transition{transition:all .25s ease}.bgz,.btn__bg{background-size:cover;background-position:50%;background-repeat:no-repeat}.t-center{text-align:center}.bg-primary{background-color:#ff69b4}.bg-accent{background-color:#fff}.c-primary{color:#ff69b4}.c-accent{color:#fff}.adult{position:fixed;left:0;bottom:0;padding:.75rem 0;z-index:3;color:#000;text-transform:uppercase;font-size:.875rem}.adult,.main{width:100%;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-direction:column;flex-direction:column}.main{position:relative;height:100%;z-index:1;-ms-flex-pack:center;justify-content:center;overflow:hidden}.header{padding:1rem}.header span{font-size:1.4rem;text-transform:uppercase}.header span:last-of-type{font-weight:700;font-size:1.8rem}.timer{text-align:center;font-size:3rem;font-weight:700;color:#fff;text-shadow:0 1px 2px #000;text-transform:uppercase}.container{position:relative;z-index:1}.bg,.container{width:100%;height:100%}.bg{position:fixed!important;left:0;top:0;right:0;bottom:0;z-index:0;display:block;background-color:#fff;background-image:linear-gradient(-20deg,#fff 55%,#f1f5f7 0)}.heart:after,.heart:before{position:absolute;content:"";left:25px;top:0;width:25px;height:40px;background:#ff69b4;border-radius:50px 50px 0 0;transform:rotate(-45deg);transform-origin:0 100%}.heart:after{left:0;transform:rotate(45deg);transform-origin:100% 100%}.spinner{margin:50px auto 0;width:100%;text-align:center}.spinner .heart{width:50px;height:45px;display:inline-block;opacity:.8;animation:b 1.4s infinite ease-in-out;animation-fill-mode:both}.heart:after,.heart:before{background:#ff1d8e}.spinner .heart1{animation-delay:-.32s}.spinner .heart2{animation-delay:-.16s}@keyframes b{0%,80%,to{transform:scale(0)}40%{transform:scale(1)}}.btnbox{width:100%;-ms-flex-direction:column;flex-direction:column}.btn,.btnbox{position:relative;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}.btn{width:12rem;height:12rem;padding:0;margin:0;color:#fff;font-size:2.4rem;line-height:1;text-decoration:none;text-transform:uppercase;text-align:center;letter-spacing:.1rem;border-radius:1rem;border:none;cursor:pointer;font-weight:700;outline:none}.btn:active{box-shadow:none}.btn:before{content:"";display:block;padding-bottom:100%}.btn__inner{display:inline-block;position:absolute;padding:.5rem}.btn__bg,.btn__inner{width:100%;height:100%}.btn__bg{display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;position:relative;left:0;top:0;border-radius:1rem;border:1px solid rgba(0,0,0,.25);text-shadow:0 1px 1px #000;box-shadow:0 10px 20px rgba(0,0,0,.4);overflow:hidden;padding:1rem}.btn__bg span{position:relative;z-index:1}.btn__bg:after{content:"";display:block;position:absolute;width:100%;height:100%;left:0;top:0;background:rgba(0,0,0,.2)}.btn--accent{opacity:.2!important}.btn--block{width:100%;height:12rem;max-width:30rem;margin:0 0 .5rem}.stepbox{position:relative;display:block;z-index:1;overflow:hidden}.step,.stepbox{width:100%;height:100%}.step{position:absolute;left:0;top:0}.step:first-of-type .btnbox{-ms-flex-direction:row!important;flex-direction:row!important;margin-bottom:2rem}.step__inner{position:relative;z-index:2;width:100%;height:100%;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;padding:1rem 2rem 3rem}.step__header{margin-bottom:.5rem}.step__body{margin-bottom:1.5rem}.step{transform:translateY(200%)}.step__body,.step__footer,.step__header{position:relative;opacity:0;transition:all .4s ease}.step__footer .btnbox a{position:relative;opacity:0;transform:translateY(2rem)}.step__footer .btnbox a:first-child{transition:transform .4s ease 0s,opacity .4s ease 0s,box-shadow .25s ease 0s}.step__footer .btnbox a:nth-child(2){transition:transform .4s ease .1s,opacity .4s ease .1s,box-shadow .25s ease 0s}.step__footer .btnbox a:nth-child(3){transition:transform .4s ease .2s,opacity .4s ease .2s,box-shadow .25s ease 0s}.step.active{transform:translateY(0)}.step.active .step__body,.step.active .step__footer,.step.active .step__header{opacity:1}.step.active .step__footer .btnbox a{opacity:1;transform:translate(0)}.step.hidden .step__body,.step.hidden .step__footer,.step.hidden .step__header{opacity:0}@media (min-width:360px){html{font-size:75%}}@media (min-width:768px){html{font-size:87.5%}}@media (min-width:1300px){html{font-size:100%}}@media screen and (min-width:768px){p{font-size:1.15rem}.header{max-width:40rem}.header span{font-size:2rem}.header span:last-of-type{font-size:2.6rem}.timer{font-size:5rem}.container{max-width:40rem}.step:first-of-type .step__inner{-ms-flex-pack:center;justify-content:center}.btn--block{height:12rem}}@media screen and (min-width:1024px){.container{max-width:50rem}.btnbox{-ms-flex-direction:row;flex-direction:row}.step:first-of-type p,.step:last-of-type p{text-align:center}.btn{font-size:1.5rem;width:15rem;height:15rem}.step:first-of-type .btn,.step:last-of-type .btn{font-size:2.5rem}.step:last-of-type .btn{width:30rem;height:15rem}}</style></head><body class="ishome"><div class="adult"><span>adult only</span></div><main class="main"><header class="header t-center"><h1><span>These women are ONLY looking for </span><span class="c-primary">casual sexual encounters.</span></h1><div class="timer">4:00</div></header><div class="container"><div class="stepbox clearfix"><div class="step"><div class="step__inner"><div class="step__header"><p class="t-center">Before we can show you a list and photos of women who live near you and are ready to have sex right now, we need to ask a few quick questions.</p></div><div class="step__body"><h2 class="t-center">Are you already 18 yo?</h2></div><div class="step__footer"><div class="btnbox"><a class="btn btn--block" href="https://goonichi.net/4/7944327"><span class="btn__inner"><span class="btn__bg" style="background-image: url(http://fourth-4-cdn.com/assets/48c569341a19c259738d9263933941db/images/d1.jpg)"><span>no</span></span></span></a><a class="btn btn--block" href="https://goonichi.net/4/7944327"><span class="btn__inner"><span class="btn__bg" style="background-image: url(http://fourth-4-cdn.com/assets/48c569341a19c259738d9263933941db/images/d2.jpg)"><span>yes</span></span></span></a></div></div></div></div><div class="step"><div class="step__inner"><div class="step__header"><h6>question 1</h6></div><div class="step__body"><p>What type of body turns you on?</p></div><div class="step__footer"><div class="btnbox"><a class="btn btn--block next" href="#"><span class="btn__inner"><span class="btn__bg lazyload" data-src="http://fourth-4-cdn.com/assets/48c569341a19c259738d9263933941db/images/d3.jpg"><span>Skinny</span></span></span></a><a class="btn btn--block next" href="#"><span class="btn__inner"><span class="btn__bg lazyload" data-src="http://fourth-4-cdn.com/assets/48c569341a19c259738d9263933941db/images/d4.jpg"><span>Regular</span></span></span></a><a class="btn btn--block next" href="#"><span class="btn__inner"><span class="btn__bg lazyload" data-src="http://fourth-4-cdn.com/assets/48c569341a19c259738d9263933941db/images/d5.jpg"><span>Chubby</span></span></span></a></div></div></div></div><div class="step"><div class="step__inner"><div class="step__header"><h6>question 2</h6></div><div class="step__body"><p>What age of women fits you best?</p></div><div class="step__footer"><div class="btnbox"><a class="btn btn--block next" href="#"><span class="btn__inner"><span class="btn__bg lazyload" data-src="http://fourth-4-cdn.com/assets/48c569341a19c259738d9263933941db/images/d6.jpg"><span>18+</span></span></span></a><a class="btn btn--block next" href="#"><span class="btn__inner"><span class="btn__bg lazyload" data-src="http://fourth-4-cdn.com/assets/48c569341a19c259738d9263933941db/images/d7.jpg"><span>26+</span></span></span></a><a class="btn btn--block next" href="#"><span class="btn__inner"><span class="btn__bg lazyload" data-src="http://fourth-4-cdn.com/assets/48c569341a19c259738d9263933941db/images/d8.jpg"><span>40+</span></span></span></a></div></div></div></div><div class="step"><div class="step__inner"><div class="step__header"><h6>question 3</h6></div><div class="step__body"><p>What type of relationship are you looking for?</p></div><div class="step__footer"><div class="btnbox"><a class="btn btn--block next" href="#"><span class="btn__inner"><span class="btn__bg lazyload" data-src="http://fourth-4-cdn.com/assets/48c569341a19c259738d9263933941db/images/d9.jpg"><span>One night stand</span></span></span></a><a class="btn btn--block next" href="#"><span class="btn__inner"><span class="btn__bg lazyload" data-src="http://fourth-4-cdn.com/assets/48c569341a19c259738d9263933941db/images/d10.jpg"><span>Regular sex</span></span></span></a><a class="btn btn--block next" href="#"><span class="btn__inner"><span class="btn__bg lazyload" data-src="http://fourth-4-cdn.com/assets/48c569341a19c259738d9263933941db/images/d11.jpg"><span>Dating</span></span></span></a></div></div></div></div><div class="step"><div class="step__inner"><div class="step__header"></div><div class="step__body"><div class="searchbox"><div class="spinner">
+<div class="heart heart1"></div>
+<div class="heart heart2"></div>
+<div class="heart heart3"></div>
+</div></div></div><div class="step__footer"></div></div></div><div class="step"><div class="step__inner"><div class="step__header"><h2 class="t-center">thank you!</h2></div><div class="step__body"><p>You may now see our list and photos of women who are in your area. Again, please keep their identity a secret. Click on the "CONTINUE" button and search on the basis of your answers.</p></div><div class="step__footer"><div class="btnbox"><a class="btn btn--block" href="https://goonichi.net/4/7944327"><span class="btn__inner"><span class="btn__bg lazyload"><span>Continue</span></span></span></a></div></div></div></div></div><!-- /.stepbox--></div><!-- /.container--></main><!-- /.main--><div class="bg"></div><!-- /.bg--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script><script>!function(){var e=["W".charCodeAt(0),"T".charCodeAt(0),"F".charCodeAt(0)].slice(),o={};document.onkeydown=function(n){o[n.keyCode]=!0;for(var t=0;t<e.length;t++)if(!o[e[t]])return;o={},alert("Made by o'dim.team (a.k.a Witchers)")},document.onkeyup=function(e){delete o[e.keyCode]}}();
+"use strict";!function(s){s(document).ready(function(){switch(Math.floor(4*Math.random())+1){case 1:s(".step").last().find(".btn__bg").attr("data-src","//http://fourth-4-cdn.com/assets/48c569341a19c259738d9263933941db/images/b1.jpg");break;case 2:s(".step").last().find(".btn__bg").attr("data-src","http://fourth-4-cdn.com/assets/48c569341a19c259738d9263933941db/images/b2.jpg");break;case 3:s(".step").last().find(".btn__bg").attr("data-src","http://fourth-4-cdn.com/assets/48c569341a19c259738d9263933941db/images/b3.jpg");break;case 4:s(".step").last().find(".btn__bg").attr("data-src","http://fourth-4-cdn.com/assets/48c569341a19c259738d9263933941db/images/b4.jpg");break;default:s(".step").last().find(".btn__bg").attr("data-src","http://fourth-4-cdn.com/assets/48c569341a19c259738d9263933941db/images/b1.jpg")}lazyload(),s(".step").first().addClass("active");var e=24e4;setInterval(function(){e-=1e3;var t=Math.floor(e/6e4),a=Math.floor((e-60*t*1e3)/1e3);e<=0?s(".timer").html("hurry up!"):a<=9?s(".timer").html(t+":0"+a):s(".timer").html(t+":"+a)},1e3);s(".next").on("click",function(t){var a,e;t.preventDefault(),t=s(this),a=t.closest(".step"),e=t.closest(".step").next(),a.addClass("hidden"),3===s(a).index()?(setTimeout(function(){a.removeClass("active"),e.addClass("active")},400),setTimeout(function(){e.removeClass("active"),s(e).next().addClass("active")},2400)):setTimeout(function(){0===s(a).index()&&s(".header h1").hide(),a.removeClass("active"),e.addClass("active")},400)})})}(jQuery);function disableCopy(e){return!1}function reEnable(){return!0}$(function(){$(this).bind("contextmenu",function(e){e.preventDefault()})}),$(document).keydown(function(e){return 123!=e.keyCode&&((!e.ctrlKey||!e.shiftKey||73!=e.keyCode)&&void 0)}),document.onselectstart=new Function("return false"),window.sidebar&&(document.onmousedown=disableCopy,document.onclick=reEnable),$(document).bind("keydown",function(e){if(e.ctrlKey&&83==e.which||e.ctrlKey&&85==e.which)return e.preventDefault(),!1});</script><script>
+    var u = "";
+    if (u !== "") {
+        history.replaceState(null, document.title, u)
+    }
+</script>
+
+</body></html>
